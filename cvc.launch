@@ -1,0 +1,9 @@
+<launch>
+    <node pkg="cvc_clustering" type="cvc_clustering_cvc_node" name="cvc_test" output="screen"/>
+
+<arg name="rviz" default="true" />
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find cvc_clustering)/rviz.rviz" />
+    </group>
+
+</launch>
